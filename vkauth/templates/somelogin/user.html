@@ -1,1 +1,16 @@
-{% url 'social:begin' 'vk-oauth2' %}
+{% if user.is_authenticated == False %}
+    <a href="{% url 'social:begin' 'vk-oauth2' %}">
+        <img src="/static/366122-64.png">
+    </a>
+{% endif %}
+
+{% if user == False %}
+    <a href="{% url 'social:begin' 'vk-oauth2' %}">
+        <img src="/static/366122-64.png">
+    </a>
+{% endif %}
+
+{% if user.is_authenticated %}
+    {{user.first_name}}
+    {{user.last_name}}
+{% endif %}

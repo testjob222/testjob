@@ -55,6 +55,7 @@ MIDDLEWARE_CLASSES = [
 
 SOCIAL_AUTH_USER_MODEL = 'auth.User'
 SOCIAL_AUTH_SANITIZE_REDIRECTS = True
+LOGIN_REDIRECT_URL = '/'
 AUTHENTICATION_BACKENDS = (
     
     'django.contrib.auth.backends.ModelBackend',
@@ -135,6 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = '5606930'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'tRsGR0ZjoYzOzEF6kuDW'
