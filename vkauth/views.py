@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 
 def main(request):
     """main app page"""
@@ -13,7 +12,7 @@ def main(request):
 def user_page(request, vkuser):
     """page with user information"""
     if vkuser != "new_user":
-        user = User.objects.get(username=vkuser)
+        user = request.user
     else:
         user = False
     return render(request, 'somelogin/user.html', {'user': user})
